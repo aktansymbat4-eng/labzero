@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { ArrowRight, Beaker, FlaskConical, Leaf, Play, RotateCcw, Sparkles, Sun, Wind } from 'lucide-react'
 
+
 type ExperimentKey = 'biology' | 'chemistry' | 'math'
 type Copy = { experiment: string; finish: string }
 
