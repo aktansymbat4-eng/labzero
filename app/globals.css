@@ -112,3 +112,23 @@ h1, h2, h3, p { margin: 0; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
 
 @layer base { * { outline-color: color-mix(in srgb, var(--cyan), transparent 55%); } }
+
+.journal-screen { max-width: 860px; margin: auto; padding-top: 32px; padding-bottom: 80px; }
+.journal-heading { margin: 22px 0 44px; } .journal-heading h1 { font-size: clamp(30px, 4vw, 44px); letter-spacing: -.05em; margin: 12px 0 10px; } .journal-heading p { color: var(--muted); font-size: 13px; max-width: 480px; }
+.journal-progress-section, .journal-history-section { margin-bottom: 42px; } .journal-progress-section h2, .journal-history-section h2 { font-size: 17px; margin-bottom: 18px; }
+.journal-progress-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.progress-card { padding: 16px; border: 1px solid var(--line); background: var(--panel); border-radius: 8px; }
+.progress-card-top { display: flex; align-items: center; justify-content: space-between; font-size: 12px; margin-bottom: 12px; } .progress-card-top span { color: var(--cyan); font-weight: 700; }
+.progress-bar { height: 5px; border-radius: 3px; background: var(--line); overflow: hidden; margin-bottom: 10px; } .progress-bar i { display: block; height: 100%; background: var(--green); border-radius: 3px; }
+.progress-card small { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+.journal-status { color: var(--muted); font-size: 13px; }
+.journal-empty { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 50px 20px; border: 1px dashed var(--line); border-radius: 8px; color: var(--muted); text-align: center; } .journal-empty svg { width: 26px; color: var(--cyan); } .journal-empty strong { color: var(--text); font-size: 14px; } .journal-empty p { font-size: 12px; max-width: 320px; }
+.journal-list { display: flex; flex-direction: column; gap: 10px; }
+.journal-entry { display: flex; gap: 14px; padding: 16px; border: 1px solid var(--line); background: var(--panel); border-radius: 8px; }
+.journal-entry-badge { flex: 0 0 auto; display: flex; align-items: center; gap: 6px; height: fit-content; padding: 5px 9px; border-radius: 5px; font-size: 9px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; white-space: nowrap; } .journal-entry-badge svg { width: 11px; } .journal-entry-badge.match { color: var(--green); background: rgba(80,227,164,.1); } .journal-entry-badge.mismatch { color: var(--orange); background: rgba(255,184,107,.1); }
+.journal-entry-body { flex: 1; min-width: 0; }
+.journal-entry-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 6px; } .journal-entry-head strong { font-size: 13px; } .journal-entry-head time { color: var(--muted); font-size: 10px; white-space: nowrap; }
+.journal-entry-question { color: var(--muted); font-size: 12px; line-height: 1.5; margin-bottom: 12px; }
+.journal-entry-values { display: flex; align-items: center; gap: 14px; } .journal-entry-values svg { width: 13px; color: var(--muted); flex: 0 0 auto; } .journal-entry-values small { display: block; color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; } .journal-entry-values b { font-size: 12px; font-weight: 600; }
+@media (max-width: 900px) { .journal-progress-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .journal-progress-grid { grid-template-columns: 1fr; } .journal-entry { flex-direction: column; } .journal-entry-values { flex-wrap: wrap; } }
